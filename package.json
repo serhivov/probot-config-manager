@@ -13,6 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/lswith/probot-config-manager.git"
   },
+  "files": [
+    "lib"
+  ],
   "keywords": [
     "probot"
   ],
