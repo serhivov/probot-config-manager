@@ -1,0 +1,45 @@
+{
+  "name": "probot-config-manager",
+  "version": "0.1.0",
+  "description": "A probot configuration manager",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "rm -rf lib && jest",
+    "build": "rm -rf lib && tsc -p tsconfig.json",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lswith/probot-config-manager.git"
+  },
+  "keywords": [
+    "probot"
+  ],
+  "author": "Luke Swithenbank",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/lswith/probot-config-manager/issues"
+  },
+  "homepage": "https://github.com/lswith/probot-config-manager#readme",
+  "dependencies": {
+    "probot": "^9.2.20"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@types/joi": "^14.3.3",
+    "@types/node": "^12.6.1",
+    "jest": "^24.8.0",
+    "prettier": "^1.18.2",
+    "semantic-release": "^15.13.18",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "joi": "^14.3.1",
+    "typescript": "^3.5.3"
+  },
+  "peerDependencies": {
+    "joi": "^14.3.1"
+  }
+}
