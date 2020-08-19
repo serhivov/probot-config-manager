@@ -15,7 +15,7 @@ class FakeConfig {
   public async getConfig(filename: string, defaultConfig: any): Promise<any> {
     this.filename = filename;
     this.defaultConfig = defaultConfig;
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       resolve(this.returnedResult);
     });
   }
@@ -28,13 +28,13 @@ it("grabs config from the context", () => {
     comments: [
       {
         comment: "You should add\nsome stuff\nhere",
-        label: "test"
-      }
-    ]
+        label: "test",
+      },
+    ],
   });
   const configMethod = config.getConfig.bind(config);
   const context = new FakeContext({}, {}, configMethod);
-  return manager.getConfig(context).then(cconfig => {
+  return manager.getConfig(context).then((cconfig) => {
     expect(cconfig).toHaveProperty("comments");
   });
 });
@@ -46,13 +46,13 @@ it("throws if invalid config", () => {
     commen: [
       {
         comment: "You should add\nsome stuff\nhere",
-        label: "test"
-      }
-    ]
+        label: "test",
+      },
+    ],
   });
   const configMethod = config.getConfig.bind(config);
   const context = new FakeContext({}, {}, configMethod);
-  return manager.getConfig(context).catch(err => {
+  return manager.getConfig(context).catch((err) => {
     expect(err).toBeDefined();
     expect(err.message).toContain("Invalid Config");
   });
