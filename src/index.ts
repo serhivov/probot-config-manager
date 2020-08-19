@@ -12,7 +12,7 @@ export class ConfigManager<T> {
     this.schema = schema;
   }
 
-  public async getConfig(context: Context): Promise<T | null> {
+  public async getConfig(context: Context): Promise<T> {
     const newConfig = await context.config<T>(
       this.filename,
       this.defaultConfig
@@ -21,8 +21,9 @@ export class ConfigManager<T> {
     if (result.error) {
       const annotation = result.error.annotate();
       throw new Error(`Invalid Config: ${annotation}`);
+      return {} as T;
     }
-    return newConfig;
+    return newConfig!;
   }
 
   private validateConfig(
